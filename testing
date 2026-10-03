@@ -1,0 +1,120 @@
+[33mcommit 75c0ad78cc55a047bb2d9bb1b4d594423c2df7a2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 984c2f7 69c07a4
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Mon Mar 9 13:07:00 2026 +0545
+
+    fix
+
+[33mcommit 69c07a4320694f6f2d2b815dfb3d85dce4b0ddd2[m[33m ([m[1;31morigin/feature-doctor[m[33m, [m[1;32mfeature-doctor[m[33m)[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Sat Mar 7 14:56:30 2026 +0545
+
+    functionality of the doctor chat_screen added
+
+[33mcommit 984c2f77fe467ba63365f5ee44eb215750a89e1c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Sat Mar 7 11:32:16 2026 +0545
+
+    questionare screen updated with new design
+
+[33mcommit d0820f7aad7ceac98dded00e4a94ecffc7705b4f[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Fri Feb 27 16:11:40 2026 +0545
+
+    user Profile(feat) update with the pet profile
+
+[33mcommit 17f208d8c0b825603b61e5245de0e3434c5af8f8[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Fri Feb 27 14:49:59 2026 +0545
+
+    language(feat) added with japan nepali and english
+
+[33mcommit c43f2afeabd253086c94ab344aa76c73615f35fe[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Feb 25 13:30:38 2026 +0545
+
+    search text box completed
+
+[33mcommit 237c2aa36f89fd02183e1f710fcc0ecf95ef8a4d[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Feb 24 13:56:19 2026 +0545
+
+    image upload features added in the book appointment flow
+
+[33mcommit 57472fa0d3c3cb1a7f49258b18ff1f1d53bbdf72[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Feb 24 12:49:09 2026 +0545
+
+    fixed the remaining normal route path using named
+
+[33mcommit 0e494b22bb792c3b680d553d97768c7deff88b64[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Feb 18 12:33:57 2026 +0545
+
+    doctor signup(feat) removed
+
+[33mcommit 84d5895d2c6950f36db69e05c7713daa1ff6b660[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Feb 18 12:10:53 2026 +0545
+
+    doctor signup(feat) removed
+
+[33mcommit d79b77d59501aa92003c89531a615d125edb8afe[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Feb 11 14:45:19 2026 +0545
+
+    style(font-family) set up completed
+
+[33mcommit 97cefc3d41650648f2d080d471cf703b3e6c893e[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Feb 3 17:24:10 2026 +0545
+
+    feat previous report card completed'
+
+[33mcommit 24db33f90fca3c0d2cca076078a7b24d3efd1cdd[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Feb 3 15:15:20 2026 +0545
+
+    home card content ui changed f
+
+[33mcommit 16c0135e999a610cc107e7785ae12cc17e592a44[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Jan 28 12:59:28 2026 +0545
+
+    case_report_card  built and implemented
+
+[33mcommit 760c404fd65433774eba69512103df0516063a7e[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Jan 27 16:25:16 2026 +0545
+
+    signup Process completed of doctor too
+
+[33mcommit 723eae47a516d451d5104c906ab459eb959fd729[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Tue Jan 27 12:20:49 2026 +0545
+
+    book appointment flow complete without using custom form widgets
+
+[33mcommit fa4acd750c95aa0d59046b8c6bfc18db413be415[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Mon Jan 26 15:12:50 2026 +0545
+
+    cases page completed with both active and closed cases
+
+[33mcommit 8870377d3407a7291e3f1de35bf5316d7cc02b22[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Fri Jan 23 16:43:12 2026 +0545
+
+    cases page completed without media
+
+[33mcommit 6e97e229f14cb5a5484a74136dbf8121dc0f372c[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Thu Jan 22 11:24:23 2026 +0545
+
+    screen completed upto on boarding screen
+
+[33mcommit a1ce5273bf67248cd2c6483cca77636bb46210bd[m
+Author: gyansinghraj22 <gyan.777402@memc.tu.edu.np>
+Date:   Wed Jan 21 11:18:55 2026 +0545
+
+    just initial setup for the app

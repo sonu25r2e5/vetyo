@@ -1,0 +1,64 @@
+# name: Flutter iOS Build
+
+# on:
+#   push:
+#     branches: [ main ]
+
+# jobs:
+#   build-ios:
+#     runs-on: macos-latest
+
+#     steps:
+#       # 1️⃣ Checkout the repo
+#       - uses: actions/checkout@v4
+
+#       # 2️⃣ Setup Flutter 3.41.6
+#       - name: Setup Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: '3.41.6'  # <- your Flutter version
+
+#       # 3️⃣ Verify Flutter and Dart versions
+#       - name: Check Flutter & Dart version
+#         run: flutter --version
+
+#       # 4️⃣ Install Flutter dependencies
+#       - name: Install dependencies
+#         run: flutter pub get
+
+#       # 5️⃣ Install CocoaPods
+#       - name: Install CocoaPods
+#         run: |
+#           cd ios
+#           pod install
+
+#       # 6️⃣ Build iOS (no code signing yet)
+#       - name: Build iOS
+#         run: flutter build ios --release --no-codesign
+
+#       # 7️⃣ Archive iOS app
+#       - name: Archive iOS App
+#         run: |
+#           cd ios
+#           xcodebuild archive \
+#             -workspace Runner.xcworkspace \
+#             -scheme Runner \
+#             -archivePath build/Runner.xcarchive \
+#             -sdk iphoneos \
+#             SKIP_INSTALL=NO
+
+#       # 8️⃣ Export IPA
+#       - name: Export IPA
+#         run: |
+#           cd ios
+#           xcodebuild -exportArchive \
+#             -archivePath build/Runner.xcarchive \
+#             -exportPath build/output \
+#             -exportOptionsPlist ExportOptions.plist
+
+#       # 9️⃣ Upload IPA artifact
+#       - name: Upload IPA
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: ios-ipa
+#           path: ios/build/output/*.ipa
