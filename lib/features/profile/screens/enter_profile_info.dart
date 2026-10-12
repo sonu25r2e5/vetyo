@@ -7,6 +7,7 @@ import 'package:vetyo/core/common/base_page/base_page.dart';
 import 'package:vetyo/core/common/custom_form_field/custom_form_field_config.dart';
 import 'package:vetyo/core/common/custom_form_field/custom_form_field_generator.dart';
 import 'package:vetyo/core/extention/color_extention.dart';
+import 'package:vetyo/core/typography/color_style_extensions.dart';
 import 'package:vetyo/core/typography/font_style_extensions.dart';
 import 'package:vetyo/core/typography/font_style_extentions.dart';
 import 'package:vetyo/core/utils/image_utils.dart';
@@ -201,7 +202,7 @@ class _EnterProfileInfoScreenState extends State<EnterProfileInfoScreen> {
       //             .medium
       //             .bold
       //             .withSatoshi
-      //             .brightSky700
+      //             .brightSky
       //             .copyWith(height: 1.2),
       //       ),
       //     ),

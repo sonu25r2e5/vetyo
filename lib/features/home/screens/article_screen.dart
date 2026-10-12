@@ -129,18 +129,6 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             ),
                           ),
                         ),
-                        // SizedBox(height: 4.h),
-                        // Container(
-                        //   width: 35.w,
-                        //   height: 2.h,
-                        //   decoration: BoxDecoration(
-                        //     color:
-                        //         _selectedTab == 0
-                        //             ? ColorPalete.brand
-                        //             : Colors.transparent,
-                        //     borderRadius: BorderRadius.circular(1.r),
-                        //   ),
-                        // ),
                       ],
                     ),
                     SizedBox(width: 15.w),
@@ -163,18 +151,6 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             ),
                           ),
                         ),
-                        // SizedBox(height: 4.h),
-                        // Container(
-                        //   width: 35.w,
-                        //   height: 2.h,
-                        //   decoration: BoxDecoration(
-                        //     color:
-                        //         _selectedTab == 1
-                        //             ? Colors.white
-                        //             : Colors.transparent,
-                        //     borderRadius: BorderRadius.circular(1.r),
-                        //   ),
-                        // ),
                       ],
                     ),
                   ],
@@ -210,7 +186,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                   color:
                       _currentPage == index
                           ? Colors.white
-                          : Colors.white.withOpacity(0.5),
+                          : Colors.white.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(3.r),
                 ),
               );
@@ -511,7 +487,7 @@ class _ArticleDetailSheet extends StatelessWidget {
                                     ),
                                     backgroundColor: const Color(
                                       0xFF078768,
-                                    ).withOpacity(0.1),
+                                    ).withValues(alpha: 0.1),
                                     labelPadding: EdgeInsets.symmetric(
                                       horizontal: 8.w,
                                     ),

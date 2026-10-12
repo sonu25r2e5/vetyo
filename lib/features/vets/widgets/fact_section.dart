@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vetyo/constants/app_colors.dart';
+import 'package:vetyo/constants/app_images.dart';
 
-const String _petImageUrl =
-    "https://www.figma.com/api/mcp/asset/c7798115-cb6a-4c5e-accf-3039a671c03f";
+const String _petImageUrl = AppImages.rabbit3;
 
 class FactSection extends StatefulWidget {
   const FactSection({super.key});
@@ -106,6 +106,30 @@ class _FactCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final quoteStart = fact.description.indexOf('"');
+    final quoteEnd =
+        quoteStart == -1 ? -1 : fact.description.indexOf('"', quoteStart + 1);
+    final descriptionSpans = <TextSpan>[];
+
+    if (quoteStart == -1 || quoteEnd == -1) {
+      descriptionSpans.add(TextSpan(text: fact.description));
+    } else {
+      descriptionSpans
+        ..add(TextSpan(text: fact.description.substring(0, quoteStart)))
+        ..add(
+          TextSpan(
+            text: fact.description.substring(quoteStart, quoteEnd + 1),
+            style: TextStyle(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              fontFamily: 'Satoshi',
+              color: const Color(0xFF0F172B),
+            ),
+          ),
+        )
+        ..add(TextSpan(text: fact.description.substring(quoteEnd + 1)));
+    }
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       decoration: BoxDecoration(
@@ -125,16 +149,12 @@ class _FactCarousel extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            right: -125.w,
-            bottom: 0,
+            right: -20.w,
+            top: 90,
             child: Transform.scale(
-              scaleX: -1.0,
-              child: Image.network(
-                imageUrl,
-                width: 400.w,
-                height: 300.h,
-                fit: BoxFit.cover,
-              ),
+              scaleX: 0.25,
+              scaleY: 0.25,
+              child: Image.asset(imageUrl),
             ),
           ),
           // Content
@@ -152,14 +172,14 @@ class _FactCarousel extends StatelessWidget {
                     Text(
                       fact.title,
                       style: TextStyle(
-                        fontSize: 32.sp,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Baloo 2',
                         color: Colors.white,
                         height: 1.125,
                       ),
                     ),
-                    SizedBox(height: 12.h),
+                    SizedBox(height: 10.h),
                     // Description
                     RichText(
                       text: TextSpan(
@@ -170,23 +190,12 @@ class _FactCarousel extends StatelessWidget {
                           color: const Color(0xFF0F172B),
                           height: 1.2,
                         ),
-                        children: [
-                          TextSpan(text: fact.description.split('"')[0]),
-                          TextSpan(
-                            text: '"${fact.description.split('"')[1]}"',
-                            style: TextStyle(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w900,
-                              fontFamily: 'Satoshi',
-                              color: const Color(0xFF0F172B),
-                            ),
-                          ),
-                        ],
+                        children: descriptionSpans,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 199.h),
+                // SizedBox(height: 9.h),
                 // FACT Section
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,7 +213,7 @@ class _FactCarousel extends StatelessWidget {
                     Text(
                       fact.fact,
                       style: TextStyle(
-                        fontSize: 14.sp,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.normal,
                         fontFamily: 'Satoshi',
                         color: Colors.white,

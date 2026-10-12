@@ -6,10 +6,10 @@ showSuccessSnackBar(BuildContext context, String text) {
     SnackBar(
       content: Text(text),
       backgroundColor: AppColor.successColor,
-      padding: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.all(50),
+      margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
       elevation: 30,
       duration: const Duration(milliseconds: 1000),
       action: SnackBarAction(
@@ -32,10 +32,10 @@ showErrorSnackBar(BuildContext context, String text) {
     SnackBar(
       content: Text(text),
       backgroundColor: AppColor.errorColor,
-      padding: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.all(50),
+      margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
       elevation: 30,
       duration: const Duration(milliseconds: 1000),
       action: SnackBarAction(
@@ -58,10 +58,10 @@ showAppExistSnackBar(BuildContext context) {
     SnackBar(
       content: const Text("Click once more to exit app"),
       backgroundColor: AppColor.appThemeColor,
-      padding: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.all(50),
+      margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
       elevation: 30,
       duration: const Duration(milliseconds: 1000),
       action: SnackBarAction(
@@ -84,12 +84,12 @@ showSnackBar(BuildContext context, String text) {
     SnackBar(
       content: Text(text),
       backgroundColor: AppColor.brightSkyMain,
-      padding: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.all(15),
       shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.all(50),
-      elevation: 30,
-      duration: const Duration(milliseconds: 1000),
+      margin: const EdgeInsets.all(12),
+      elevation: 10,
+      duration: const Duration(milliseconds: 10),
       action: SnackBarAction(
         label: 'Dismiss',
         disabledTextColor: Colors.white,

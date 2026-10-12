@@ -35,7 +35,6 @@ class _HomePageState extends State<HomePage> {
     // Ensure keyboard is dismissed when screen loads
     WidgetsBinding.instance.addPostFrameCallback((_) {
       FocusScope.of(context).unfocus();
-      
     });
   }
 
@@ -61,6 +60,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildBottomNavigationBar() {
+    // building the navigation Bar in here . // nothing else. do to do .
     return Container(
       height: 84.h,
       decoration: BoxDecoration(
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 Iconoir.HomeSimpleDoor(
                   width: 24.sp,
                   height: 24.sp,
-                  color: ColorPalete.brightSky[600],
+                  color: ColorPalete.brightSky[900],
                 ),
                 'Home',
                 0,
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                   color: ColorPalete.slate[500],
                 ),
                 Iconoir.UserCircle(
-                  width: 24.sp,
+                  width: 54.sp,
                   height: 24.sp,
                   color: const Color(0xFF1DC7F2),
                 ),
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.pushNamed(context, '/addCase');
       },
       child: Container(
-        width: 42.w,
+        width: 22.w,
         // height: 42.w,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Icon(
               Icons.add_circle_outline,
-              size: 42.sp,
+              size: 35.sp,
               color: ColorPalete.slate[500],
             ),
           ],

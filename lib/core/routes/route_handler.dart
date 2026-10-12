@@ -34,6 +34,7 @@ import 'package:vetyo/features/onboarding/screens/onboarding_screen.dart';
 import 'package:vetyo/features/otp_verification/screens/otp_verification.dart';
 import 'package:vetyo/features/otp_verification/screens/otp_verify_success_screen.dart';
 import 'package:vetyo/features/pet/screens/add_pet_screens.dart';
+import 'package:vetyo/features/profile/screens/Favorite_screen.dart';
 import 'package:vetyo/features/profile/screens/category_profile_screen.dart';
 import 'package:vetyo/features/profile/screens/edit_profile_screen.dart';
 import 'package:vetyo/features/profile/screens/add_register_profile_screen.dart';
@@ -303,6 +304,9 @@ class RouteHandler {
                     typeArgs['shouldScrollToComment'] as bool? ?? false,
               ),
         );
+
+      case RoutePaths.favoriteScreen:
+        return MaterialPageRoute(builder: (_) => FavoriteScreen());
 
       case RoutePaths.sharePostScreen:
         return MaterialPageRoute(builder: (_) => const SharePostCardWidget());

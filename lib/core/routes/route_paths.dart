@@ -5,6 +5,8 @@ class RoutePaths {
   static const loginScreen = '/loginScreen';
   static const homeScreen = '/homeScreen';
   static const editUserProfileScreen = '/editUserScreen';
+  // favorite screen .
+  static const favoriteScreen = '/favoriteScreen';
   static const settingScreen = '/settingScreen';
   static const languageScreen = '/languageScreen';
 
@@ -75,13 +77,9 @@ class RoutePaths {
   static const addPetScreen = '/addPetScreens';
 
   static const addPoultryScreen = '/addPoultryScreen';
-
   static const addLivestockScreen = '/addLivestockScreen';
-
   static const addAquaScreen = '/addAquaScreen';
-
   static const addVegetableScreen = '/addVegetableScreen';
-
   static const communityScreen = '/communityScreen';
   static const addPostScreen = '/addPostScreen';
   static const addPollScreen = '/addPollScreen';

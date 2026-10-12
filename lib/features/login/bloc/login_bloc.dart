@@ -14,16 +14,20 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       if (event is LoginInitialEvent) {
         emit(LoginInitial());
       } else if (event is UserLoginEvent) {
+        // lgoin
         var result = await loginService.userLogin(formData: event.formData);
-        result.fold((l) {
-          emit(UserLoginSuccessState(response: l));
-        }, (r) {
-          emit(UserLoginErrorState(
-              errorModel: ErrorModel(
-            code: r.code,
-            message: r.message,
-          )));
-        });
+        result.fold(
+          (l) {
+            emit(UserLoginSuccessState(response: l));
+          },
+          (r) {
+            emit(
+              UserLoginErrorState(
+                errorModel: ErrorModel(code: r.code, message: r.message),
+              ),
+            );
+          },
+        );
       }
     });
   }

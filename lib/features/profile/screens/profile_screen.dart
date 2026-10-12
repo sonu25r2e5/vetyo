@@ -7,6 +7,7 @@ import 'package:vetyo/core/extention/color_extention.dart';
 import 'package:vetyo/core/routes/route_paths.dart';
 import 'package:vetyo/core/typography/font_style_extensions.dart';
 import 'package:vetyo/core/typography/font_style_extentions.dart';
+import 'package:vetyo/features/profile/screens/Favorite_screen.dart';
 import 'package:vetyo/generated/l10n/app_localizations.dart';
 import 'package:vetyo/features/profile/widgets/profile_menu_options.dart';
 
@@ -74,11 +75,16 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                       );
                     },
                   ),
+
                   _ProfileMenuItemData(
                     icon: Icons.favorite_border,
                     label: 'Favourites',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, RoutePaths.favoriteScreen);
+                    },
                   ),
+                  // fprofile name
+
                   _ProfileMenuItemData(
                     icon: Icons.notifications_none,
                     label: 'Notifications',
@@ -129,6 +135,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       ),
     );
   }
+
+  // menu option
 
   void _showOptionsMenu(BuildContext context) {
     showMenu(
@@ -227,6 +235,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     );
   }
 
+  // initial Page .
   Widget _buildStatsRow() {
     return Row(
       children: [
@@ -261,6 +270,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     );
   }
 
+  // buidl Sttats Pill all of ti . s
   Widget _buildStatPill({
     required String label,
     required VoidCallback onPressed,

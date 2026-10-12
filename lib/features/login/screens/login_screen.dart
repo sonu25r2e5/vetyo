@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void didChangeDependencies() {
     // Now we can safely use context.l10n
+    // save game is here.
     formFields = [
       CustomFormFieldConfig(
         fieldType: FieldType.email,
@@ -122,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  // lgoin images
   /// Static layout like signup: fixed header image, scrollable login form area
   Widget buildSilverAppBar() {
     return Column(
@@ -258,6 +260,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             const SizedBox(height: 16),
+            // by pressing the button we click here.
             CustomButton(
               gradient: LinearGradient(
                 colors: [AppColor.brightSkyMain, AppColor.healingGreenMain],
