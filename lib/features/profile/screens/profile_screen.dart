@@ -88,7 +88,12 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   _ProfileMenuItemData(
                     icon: Icons.notifications_none,
                     label: 'Notifications',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutePaths.notificationScreen,
+                      );
+                    },
                   ),
                   _ProfileMenuItemData(
                     icon: Icons.badge_outlined,

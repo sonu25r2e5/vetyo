@@ -5,6 +5,7 @@ class RoutePaths {
   static const loginScreen = '/loginScreen';
   static const homeScreen = '/homeScreen';
   static const editUserProfileScreen = '/editUserScreen';
+  // static const notificationScreen = '/notifyScreen';
   // favorite screen .
   static const favoriteScreen = '/favoriteScreen';
   static const settingScreen = '/settingScreen';
