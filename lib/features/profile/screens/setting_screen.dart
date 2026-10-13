@@ -268,7 +268,6 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ],
               ),
-
               const SizedBox(height: 32),
             ],
           ),

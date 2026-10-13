@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vetyo/constants/app_colors.dart';
+import 'package:vetyo/constants/app_images.dart';
 import 'package:vetyo/core/common/base_page/base_page.dart';
 import 'package:vetyo/core/extention/color_extention.dart';
 import 'package:vetyo/core/typography/font_style_extentions.dart';
@@ -35,7 +37,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   Widget build(BuildContext context) {
     return BasePage(
       showAppBar: true,
-      title: Text('Favorite Screen', style: context.textBlackStyle().header6),
+      title: Text('Favorites', style: context.textBlackStyle().header6),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -167,7 +169,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: visibleVets.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+        crossAxisCount: 1,
+        mainAxisExtent: MediaQuery.of(context).size.height * 0.175,
         crossAxisSpacing: 12.w,
         mainAxisSpacing: 12.h,
         childAspectRatio: 0.65,
@@ -212,123 +215,115 @@ class _VeterinarianCardState extends State<_VeterinarianCard> {
             .join()
             .toUpperCase();
 
-    return Container(
-      padding: EdgeInsets.all(14.w),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x140F172A),
-            blurRadius: 12,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 25.r,
-                backgroundColor: const Color(0xFFE0F2F1),
-                child: Text(
-                  initials,
-                  style: TextStyle(
-                    color: const Color(0xFF0F677F),
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () {
-                  setState(() => _isFavorite = !_isFavorite);
-                },
-                tooltip:
-                    _isFavorite ? 'Remove from favorites' : 'Add to favorites',
-                visualDensity: VisualDensity.compact,
-                constraints: const BoxConstraints(),
-                padding: EdgeInsets.zero,
-                icon: Icon(
-                  _isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: _isFavorite ? Colors.redAccent : Colors.grey,
-                  size: 21.sp,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            vet.name,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: const Color(0xFF0F172B),
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w700,
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(2),
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        padding: EdgeInsets.all(14.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x140F172A),
+              blurRadius: 12,
+              offset: Offset(0, 4),
             ),
-          ),
-          SizedBox(height: 5.h),
-          Text(
-            vet.specialty,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: const Color(0xFF62748E), fontSize: 11.sp),
-          ),
-          SizedBox(height: 6.h),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.location_on_outlined,
-                size: 14.sp,
-                color: const Color(0xFF62748E),
-              ),
-              SizedBox(width: 3.w),
-              Expanded(
-                child: Text(
-                  vet.location,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: const Color(0xFF62748E),
-                    fontSize: 10.sp,
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                // otor image
+                Container(
+                  height: 90,
+                  width: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Image.asset(AppImages.avatarImage),
+                ),
+                // const Spacer(),
+                // Vetname lies here
+                SizedBox(width: 20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+                    Text(
+                      vet.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      vet.specialty,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: AppColor.blackColor,
+                        fontSize: 14.sp,
+                      ),
+                    ),
+                    SizedBox(height: 5.h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.location_on_outlined,
+                          size: 14.sp,
+                          color: const Color(0xFF62748E),
+                        ),
+                        // SizedBox(height: 2),
+                        Text('Cardiology Center, NEPAL'),
+                      ],
+                    ),
+                    SizedBox(height: 2),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          size: 14.sp,
+                          color: const Color(0xFF62748E),
+                        ),
+                        Text('5 | '),
+                        SizedBox(width: 1),
+                        Text('1872\tReviews'),
+                      ],
+                    ),
+                  ],
+                ),
+                IconButton(
+                  onPressed: () {
+                    setState(() => _isFavorite = !_isFavorite);
+                  },
+                  tooltip:
+                      _isFavorite
+                          ? 'Remove from favorites'
+                          : 'Add to favorites',
+                  visualDensity: VisualDensity.compact,
+                  constraints: const BoxConstraints(),
+                  padding: EdgeInsets.zero,
+                  icon: Icon(
+                    _isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: _isFavorite ? Colors.redAccent : Colors.grey,
+                    size: 21.sp,
                   ),
                 ),
-              ),
-            ],
-          ),
-          const Spacer(),
-          Row(
-            children: [
-              Icon(Icons.star_rounded, size: 15.sp, color: Colors.amber),
-              SizedBox(width: 3.w),
-              Text(
-                vet.rating.toStringAsFixed(1),
-                style: TextStyle(
-                  color: const Color(0xFF475569),
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(width: 4.w),
-              Expanded(
-                child: Text(
-                  '(${vet.reviews} reviews)',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: const Color(0xFF62748E),
-                    fontSize: 10.sp,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
